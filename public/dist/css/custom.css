@@ -1,0 +1,55 @@
+.radio-inputs{
+    display: inline-block;
+    margin-left: 20px;
+    font-size: 14px;
+
+
+}
+
+.d-radio{
+    padding: 10px;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+    color: inherit;
+}
+
+.g-header{
+    margin-bottom: -8px;
+}
+
+.d-radio-layout{
+    margin-top: 10px;
+}
+.time-control{
+    margin-top: 10px;
+
+
+}
+
+.radio-inputs-start{
+    margin-left: 60px;
+}
+
+.radio-layout{
+    margin-left: 20px;
+}
+
+.radio-layout-2{
+    margin-left: 20px;
+}
+
+span count-template{
+    font-size: 20px;
+    padding-left: 5px;
+
+}
+#count_days{
+    margin-top: 6px;
+}
+
+.back-layout{
+    margin-left: 20px;
+}
+.count-start{
+    margin-left: 8px;
+}
