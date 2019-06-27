@@ -51,7 +51,8 @@ class UserController extends Controller
                  User::create([
                   'first_name' => $value->first_name ? $value->first_name:$faker->firstName ,
                   'last_name' => $value->last_name ? $value->last_name :$faker->lastName,
-                  'birthday' => $value->gender=='MALE' ? 'M' : 'F',
+                  'birthday' => $value->birthday ? $value->birthday : $faker->date($format = 'Y-m-d', $max = 'now'),
+                  'gender' => $value->gender =='MALE' ? 'M' : 'F',
                   'email' => $value->email ? $value->email : $faker->email,
                   'telephone' => $value->telephone,
                   'cellphone' => $value->cellphone,
