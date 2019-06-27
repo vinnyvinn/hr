@@ -70,6 +70,7 @@ class UserController extends Controller
                   'nssf' => $value->nssf,
                   'nhif' => $value->nhif,
                   'kra' => $value->kra,
+                  'role_id' => 2,
                   'username' => $faker->userName,
                   'password' => 'password'
                ]);
