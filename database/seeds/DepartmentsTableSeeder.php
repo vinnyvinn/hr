@@ -14,24 +14,57 @@ class DepartmentsTableSeeder extends Seeder
     {
 		Department::truncate();
 		Department::create([
-			'department' => 'Web Development', 
+			'department' => 'HR & ADMIN',
 
 		]);
 		Department::create([
-			'department' => 'Marketing', 
+			'department' => 'FINANCE',
 
 		]);
 		Department::create([
-			'department' => 'Sales', 
+			'department' => 'MILK RECEPTION',
 
 		]);
 		Department::create([
-			'department' => 'Admin', 
+			'department' => 'DISPATCH',
 
 		]);
 		Department::create([
-			'department' => 'Content',
+			'department' => 'STORES',
 
 		]);
+        Department::create([
+            'department' => 'IT',
+
+        ]);
+        Department::create([
+            'department' => 'EXTENSION',
+
+        ]);
+        Department::create([
+            'department' => 'QUALITY ASSURANCE',
+
+        ]);
+        Department::create([
+            'department' => 'PRODUCTION',
+
+        ]);
+        Department::create([
+            'department' => 'MAINTENANCE',
+
+        ]);
+        Department::create([
+            'department' => 'LOGISTICS',
+
+        ]);
+        Department::create([
+            'department' => 'BUSINESS DEV.MANAGER',
+
+        ]);
+        Department::create([
+            'department' => 'SALES & MARKETING',
+
+        ]);
+
     }
 }

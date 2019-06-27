@@ -76,6 +76,7 @@ Route::resource('training-types','TrainingTypeController');
 Route::resource('trainings','TrainingController');
 //vehicle details
 Route::resource('vehicle-details','VehicleController');
+
 //travel-perdiem
 Route::resource('travel-perdiem','TravelPerdiemController');
 Route::get('get-users/{id}','TravelPerdiemController@getUsers');
@@ -295,6 +296,8 @@ Route::post('reject-request/{id}','AssetsController@rejectRequest');
 Route::get('users', 'UserController@index');
 Route::get('users/search', 'UserController@search');
 Route::get('users/create', 'UserController@create');
+Route::get('import-form','UserController@importForm');
+Route::post('import-employees','UserController@importEmployees');
 Route::post('users', 'UserController@store');
 Route::get('users/{user}', 'UserController@show');
 Route::get('users/{user}/edit', 'UserController@edit');

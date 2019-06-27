@@ -81,29 +81,29 @@ class UsersTableSeeder extends Seeder
 //			'password' => 'password',
 //			'profile_picture' => ''
 //		]);
-		for($x = 0; $x < 50; $x++ ){
-			User::create([
-				'first_name' => $faker->firstName,
-				'last_name' => $faker->lastName,
-				'birthday' => $faker->date($format = 'Y-m-d', $max = 'now'),
-				'gender' => $faker->randomElement(['M', 'F']),
-				'email' => $faker->email,
-				'telephone' => $faker->phoneNumber,
-				'cellphone' => $faker->phoneNumber,
-				'local_address' => $faker->address,
-				'permanent_address' => $faker->address,
-				'employee_id' => $faker->randomNumber(6),
-				'department_id' => $faker->numberBetween(1, 5),
-				'designation_item_id' => $faker->numberBetween(1, 10),
-				'date_hired' => $faker->date($format = 'Y-m-d', $max = 'now'),
-                'probation_from' => NULL,
-                'probation_to' => NULL,
-				'salary' => $faker->numberBetween(15000, 25000),
-				'role_id' => 2,
-				'username' => $faker->userName,
-				'password' => 'password',
-				'profile_picture' => ''
-			]);
-		}
+//		for($x = 0; $x < 50; $x++ ){
+//			User::create([
+//				'first_name' => $faker->firstName,
+//				'last_name' => $faker->lastName,
+//				'birthday' => $faker->date($format = 'Y-m-d', $max = 'now'),
+//				'gender' => $faker->randomElement(['M', 'F']),
+//				'email' => $faker->email,
+//				'telephone' => $faker->phoneNumber,
+//				'cellphone' => $faker->phoneNumber,
+//				'local_address' => $faker->address,
+//				'permanent_address' => $faker->address,
+//				'employee_id' => $faker->randomNumber(6),
+//				'department_id' => $faker->numberBetween(1, 5),
+//				'designation_item_id' => $faker->numberBetween(1, 10),
+//				'date_hired' => $faker->date($format = 'Y-m-d', $max = 'now'),
+//                'probation_from' => NULL,
+//                'probation_to' => NULL,
+//				'salary' => $faker->numberBetween(15000, 25000),
+//				'role_id' => 2,
+//				'username' => $faker->userName,
+//				'password' => 'password',
+//				'profile_picture' => ''
+//			]);
+//		}
     }
 }

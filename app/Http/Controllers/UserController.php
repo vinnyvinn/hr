@@ -20,6 +20,8 @@ use Auth;
 use Intervention\Image\Facades\Image;
 use Letters\Models\IssuedWarning;
 use Letters\Models\IssuedAppreciation;
+use Excel;
+use Faker\Factory as Faker;
 
 class UserController extends Controller
 {
@@ -33,7 +35,48 @@ class UserController extends Controller
 		$user = User::findOrFail(1);
 		Event::fire(new RegisterUserEvent($user));
     }
-	
+
+    public function importForm()
+    {
+        return view('users.import');
+    }
+
+    public function importEmployees()
+    {
+        $path = request()->file('users')->getRealPath();
+        $data = Excel::load($path)->get();
+        $faker = Faker::create();
+        if($data->count()) {
+            foreach ($data as $key => $value) {
+               User::create([
+                  'first_name' => request()->get('first_name') ?request()->get('first_name'):$faker->firstName ,
+                  'last_name' => request()->get('last_name') ? request()->get('last_name') :$faker->lastName,
+                  'birthday' => request()->get('gender')=='MALE' ? 'M' : 'F',
+                  'email' => request()->get('email') ? request()->get('email') : $faker->email,
+                  'telephone' => request()->get('telephone'),
+                  'cellphone' => request()->get('cellphone'),
+                  'family_contact' => request()->get('family_contact'),
+                  'emergency_contact' => request()->get('emergency_contact'),
+                  'first_guarantor' => request()->get('1st_guarantor_contact'),
+                  'second_guarantor' => request()->get('2nd_guarantor_contact'),
+                  'local_address' => request()->get('local_address'),
+                  'permanent_address' => request()->get('permanent_address'),
+                  'employee_id' => request()->get('payroll_no'),
+                  'department_id' => intval(request()->get('department')),
+                  'designation_item_id' => intval(request()->get('designation')),
+                  'date_hired' => request()->get('date_hired'),
+                  'probation_from' => request()->get('probation_from'),
+                  'salary' => request()->get('salary'),
+                  'nssf' => request()->get('nssf'),
+                  'nhif' => request()->get('nhif'),
+                  'kra' => request()->get('kra'),
+                  'username' => $faker->userName,
+                  'password' => 'password'
+               ]);
+            }
+        }
+                dd($data);
+    }
     public function index()
     {
 		if(Auth::user()->role->role_permission('view_users')){

@@ -118,7 +118,7 @@
 	@endif
 </div>
 
-<div class="form-group{{ $errors->has('id_no') ? ' has-error' : '' }}">
+<div class="form-group{{ $errors->has('id_no') ? 'has-error' : '' }}">
 	{!! Form::label('id_no', 'Identification Number') !!}
 	{!! Form::text('id_no', null, ['class' => 'form-control']) !!}
 	@if ($errors->has('id_no'))
@@ -126,9 +126,36 @@
 			<strong>{{ $errors->first('id_no') }}</strong>
 		</span>
 	@endif
+</div>
+<div class="form-group{{ $errors->has('nhif') ? 'has-error' : '' }}">
+	{!! Form::label('nhif', 'NHIF') !!}
+	{!! Form::text('nhif', null, ['class' => 'form-control']) !!}
+	@if ($errors->has('nhif'))
+		<span class="help-block">
+			<strong>{{ $errors->first('nhif') }}</strong>
+		</span>
+	@endif
+</div>
+<div class="form-group{{ $errors->has('nssf') ? ' has-error' : '' }}">
+	{!! Form::label('nssf', 'NSSF') !!}
+	{!! Form::text('nssf', null, ['class' => 'form-control']) !!}
+	@if ($errors->has('nssf'))
+		<span class="help-block">
+			<strong>{{ $errors->first('nssf') }}</strong>
+		</span>
+	@endif
+</div>
+<div class="form-group{{ $errors->has('kra') ? 'has-error' : '' }}">
+	{!! Form::label('kra', 'KRA') !!}
+	{!! Form::text('kra', null, ['class' => 'form-control']) !!}
+	@if ($errors->has('kra'))
+		<span class="help-block">
+			<strong>{{ $errors->first('kra') }}</strong>
+		</span>
+	@endif
+</div>
 
-
-<div class="form-group{{ $errors->has('employee_id') ? ' has-error' : '' }}">
+<div class="form-group{{ $errors->has('employee_id') ? 'has-error' : '' }}">
 	{!! Form::label('employee_id', 'payroll number') !!}
 	{!! Form::text('employee_id', null, ['class' => 'form-control']) !!}
 	@if ($errors->has('employee_id'))
