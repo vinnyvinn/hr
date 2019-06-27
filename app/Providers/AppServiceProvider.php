@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
-        View::share('events', Event::all());
+       View::share('events', Event::all());
         View::share('notices',Notice::all());
 
 
